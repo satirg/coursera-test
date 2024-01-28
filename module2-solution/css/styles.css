@@ -260,4 +260,74 @@ body {
     transition: ease 0.5s all;
   }
   
-
+  /* ---- Theme State Rules ---- */
+  /* Section Active Styles */
+  /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
+  section.your-active-class {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+    border-radius: 1rem;
+  }
+  
+  section.your-active-class .landing__container::before {
+    opacity: 1;
+    animation: rotate 4s linear 0s infinite forwards;
+  }
+  
+  section.your-active-class .landing__container::after {
+    opacity: 1;
+    animation: rotate 5s linear 0s infinite forwards reverse;
+  }
+  
+  /* Section Active Styles Keyframe Animations */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg) translate(-1em) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-1em) rotate(-360deg);
+    }
+  }
+  
+  /* Scroll to top button */
+  .scroll-top {
+    background-color: #fff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 1rem;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 5rem;
+  }
+  
+  .scroll-top-link {
+    font-size: 2rem;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .scroll-top {
+      right: 2.5rem;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .scroll-top {
+      right: 1rem;
+      width: 35px;
+      height: 35px;
+    }
+  
+    .scroll-top-link {
+      font-size: 1.7rem;
+    }
+  }
+  
