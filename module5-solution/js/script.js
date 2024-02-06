@@ -140,7 +140,7 @@ function chooseRandomCategory (categories) {
   // return category object with that randomArrayIndex
 
 
-  return categories[randomArrayIndex]+".json";
+  return categories[randomArrayIndex];
   
 }
 
